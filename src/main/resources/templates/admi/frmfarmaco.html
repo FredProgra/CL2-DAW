@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:replace="~{layout::menu}"></nav>
+<div class="card">
+    <div class="card-header">
+        LISTA DE Farmacos
+    </div>
+
+    <div class="card-body">
+        <button type="button" class="btn btn-outline-primary"><i class="bi bi-plus-circle">Nuevo</i></button>
+        <hr/>
+        <table class="table">
+            <thead>
+            <tr class="table-primary">
+
+                <th scope="col">ID</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="farmaco:${listafarmaco}">
+
+                <td th:text="${farmaco.id}" class="table-danger"></td>
+                <td th:text="${farmaco.nombre}" class="table-info"></td>
+                <td th:text="${farmaco.precio}" class="table-info"></td>
+
+            </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+    </div>
+</div>
+</body>
+</html>
